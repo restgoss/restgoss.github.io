@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/react-signature-app/static/css/main.9f485f22.css",
-    "main.js": "/react-signature-app/static/js/main.843f3361.js",
-    "index.html": "/react-signature-app/index.html",
-    "main.9f485f22.css.map": "/react-signature-app/static/css/main.9f485f22.css.map",
-    "main.843f3361.js.map": "/react-signature-app/static/js/main.843f3361.js.map"
+    "main.css": "/static/css/main.9f485f22.css",
+    "main.js": "/static/js/main.843f3361.js",
+    "index.html": "/index.html",
+    "main.9f485f22.css.map": "/static/css/main.9f485f22.css.map",
+    "main.843f3361.js.map": "/static/js/main.843f3361.js.map"
   },
   "entrypoints": [
     "static/css/main.9f485f22.css",
