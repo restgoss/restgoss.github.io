@@ -1,7 +1,8 @@
 import React from 'react';
 import Input from './Input';
 import Select from './Select';
-import { inexgroup } from './constants';
+import { multispace, pridex, inexgroup } from './constants';
+import ReactDomServer from 'react-dom/server';
 
 class App extends React.Component {
   constructor(props) {
@@ -11,7 +12,7 @@ class App extends React.Component {
       post: 'Example',
       email: 'Example',
       phone: 'Example',
-      signatureTemplate: inexgroup
+      signatureTemplate: multispace
     };
   }
 
@@ -49,7 +50,10 @@ class App extends React.Component {
           <Input id="phone" label="Телефон:" />
           <button type='submit' className='button' onClick={this.createSignatureElement}>Сгенерировать</button>
         </form>
-        <div className='currentSignature' style={{ display: "none" }}>{this.state.signatureTemplate}</div>
+        <div className='currentSignature' style={{}}>{multispace}</div>
+        <div className='currentSignature' style={{}}>{pridex}</div>
+        <div className='currentSignature' style={{}}>{inexgroup}</div>
+
       </>
     );
     
@@ -57,3 +61,24 @@ class App extends React.Component {
 }
 
 export default App;
+
+
+
+
+
+
+
+// const inexTemplate = (ReactDomServer.renderToStaticMarkup(inexgroup));
+
+
+// const JSZip = require("jszip");
+// const FileSaver = require("file-saver");
+
+// let zip = new JSZip();
+// zip.file("Hello.html", inexTemplate);
+// let img = zip.folder("images");
+// zip.generateAsync({type:"blob"})
+// .then(function(content) {
+//     // see FileSaver.js
+//     FileSaver.saveAs(content, "example.zip");
+// });
