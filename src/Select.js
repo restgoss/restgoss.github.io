@@ -1,6 +1,6 @@
 import React from 'react';
 import './Select.css';
-const settings = ['inexgroup', 'pridex', 'inexdigital'];
+const settings = ['inexgroup', 'pridex', 'multispace'];
 
 class Select extends React.Component {
     constructor(props) {

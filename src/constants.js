@@ -67,7 +67,7 @@ export const multispace = (
                           <img
                             width={380}
                             height={100}
-                            src="https://i.postimg.cc/HWQZpY24/image.png"
+                            src="../multispace.files/multispacelogo.png"
                           />
                         </p>
                       </td>
@@ -211,8 +211,8 @@ export const pridex = (
                 <p />
                 <img
                   width={345}
-                  height={92}
-                  src="https://i.postimg.cc/gcSfwjQH/image.png"
+                  height={100}
+                  src="../pridex.files/pridexlogo.png"
                   style={{ paddingTop: "5.4pt" }}
                 />
                 <p className="MsoNormal">
@@ -375,7 +375,7 @@ export const inexgroup = (
                     <img
                       width={139}
                       height={139}
-                      src="https://i.postimg.cc/7YpcznLm/inexlogo.png"
+                      src="../inexgroup.files/inexlogo.png"
                     />
                   </span>
                 </p>
@@ -508,7 +508,7 @@ export const inexgroup = (
               >
                 <p className="MsoNormal">
                   <span style={{ fontSize: "10pt", fontFamily: "Inter" }}>
-                    <a href="https://inex-development.com/">Website </a>|{" "}
+                    <a href="https://inex-development.com/">Website</a> |{" "}
                     <a href="https://inex-development.com/projects">
                       See our projects
                     </a>
@@ -535,8 +535,7 @@ export const inexgroup = (
                     border={0}
                     width={12}
                     height={17}
-                    alt="Facebook"
-                    src="https://i.postimg.cc/JnyN927S/facebook.png"
+                    src="../inexgroup.files/facebook.png"
                   />
                 </a>
               </td>
@@ -555,7 +554,7 @@ export const inexgroup = (
                     border={0}
                     width={18}
                     height={18}
-                    src="https://i.postimg.cc/V63q1Wdv/instagram.png"
+                    src="../inexgroup.files/instagram.png"
                   />
                 </a>
               </td>
@@ -574,7 +573,7 @@ export const inexgroup = (
                     border={0}
                     width={18}
                     height={18}
-                    src="https://i.postimg.cc/Jn1NhzqV/linkedin.png"
+                    src="../inexgroup.files/linkedin.png"
                   />
                 </a>
               </td>
