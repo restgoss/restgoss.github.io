@@ -18,7 +18,6 @@ class Select extends React.Component {
         const optionElements = this.returnOptionTags();
         return (
             <>
-            <label forhtml="select">Выберите параметр:</label>
             <select id="select">
                 {optionElements}
             </select>

@@ -1,6 +1,10 @@
 select {
-    width: 300px;
-    margin: 15px 0 15px 0;
+    background-color: #fff;
+    border: 1px solid #6495ed;
+    border-radius: 15px;
+    height: 30px;
+    margin: 15px 0 35px;
     text-align: center;
     text-transform: uppercase;
+    width: 355px;
 }

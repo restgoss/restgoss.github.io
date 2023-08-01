@@ -1,5 +1,14 @@
 input {
     width: 300px;
-    margin: 15px 0 15px 0;
-    text-align: center;
+    border: none;
+    border-bottom: 1px solid #6495ed;
+    font-size: 16px;
+    height: 35px;
+    margin: 5px 0 45px;
+    text-align: left;
+    width: 350px;
+}
+
+input::placeholder {
+    color: #6495ed;
 }

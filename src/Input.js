@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
 import './Input.css';
 
 class Input extends React.Component {
@@ -17,8 +16,7 @@ class Input extends React.Component {
     render() {
         return (
             <>
-            <label forhtml={this.props.id}>{this.props.label}</label>
-            <input id={this.props.id} type={this.props.type} className='input'></input>
+            <input id={this.props.id} type={this.props.type} placeholder={this.props.placeholder} className='input'></input>
             </>
         );
     }
