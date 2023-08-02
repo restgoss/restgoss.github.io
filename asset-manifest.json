@@ -1,13 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.e30384e1.css",
-    "main.js": "/static/js/main.0c587178.js",
+    "main.css": "/static/css/main.27e7de5e.css",
+    "main.js": "/static/js/main.b02278f4.js",
+    "static/media/Circe-Bold.woff2": "/static/media/Circe-Bold.6e36325fc58f0f6da3a9.woff2",
+    "static/media/Circe-Regular.woff2": "/static/media/Circe-Regular.a583b9e16908be55984a.woff2",
     "index.html": "/index.html",
-    "main.e30384e1.css.map": "/static/css/main.e30384e1.css.map",
-    "main.0c587178.js.map": "/static/js/main.0c587178.js.map"
+    "main.27e7de5e.css.map": "/static/css/main.27e7de5e.css.map",
+    "main.b02278f4.js.map": "/static/js/main.b02278f4.js.map"
   },
   "entrypoints": [
-    "static/css/main.e30384e1.css",
-    "static/js/main.0c587178.js"
+    "static/css/main.27e7de5e.css",
+    "static/js/main.b02278f4.js"
   ]
 }
