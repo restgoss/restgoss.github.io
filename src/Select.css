@@ -7,4 +7,5 @@ select {
     text-align: center;
     text-transform: uppercase;
     width: 355px;
+    font-family: inherit;
 }
