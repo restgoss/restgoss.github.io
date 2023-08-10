@@ -1,72 +1,104 @@
-import React from 'react';
+import React, { useState, useContext } from 'react';
 import Input from './Input';
 import Select from './Select';
 import { multispace, pridex, inexgroup } from './constants';
-const JSZip = require("jszip");
-const FileSaver = require("file-saver");
+import { TranslationContext, translations } from './LanguageContext';
+import JSZip from 'jszip';
+import FileSaver from 'file-saver';
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      name: '',
-      post: '',
-      email: '',
-      phone: '',
-      select: 'inexgroup'
-    };
-  }
+function App() {
+  const LanguageContext = useContext(TranslationContext);
+  const [language, setLanguage] = useState('ru');
+  const [state, setState] = useState({
+    name: '',
+    post: '',
+    email: '',
+    phone: '',
+    select: 'inexgroup',
+  });
+
+  const handleChange = (event) => {
+    const { id, value } = event.target;
+    setState((prevState) => ({
+      ...prevState,
+      [id]: value,
+    }));
+  };
+
+  const phoneMaskRu = (phone) => {
+    const regex = /(\d?)(\d{3})(\d{3})(\d{2})(\d{2})/g;
+    const subst = "+$1 ($2) $3-$4-$5";
+    return phone.replace(regex, subst);
+  };
+
+  const phoneMaskCy = (phone) => {
+    const regex = /(\d{3})(\d{2})(\d{6})/;
+    const subst = "+$1 $2 $3";
+    return phone.replace(regex, subst);
+  };
 
 
-  handleChange = (event) => {
-    this.setState((prevState) => ({
-      prevState,
-      [event.target.id]: event.target.value,
-    }), () => {
-    });
-  }
-
-
-
-  handleSubmit = (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
-    let selectedSignature = document.querySelector(`.${this.state.select}`);
-    if (this.state.select === 'pridex') {
-      selectedSignature.querySelector('#name').textContent = this.state.name;
-      selectedSignature.querySelector('#post').textContent = this.state.post;
-      selectedSignature.querySelector('#phone').textContent = `+${this.state.phone}`;
+    console.log(state);
+    let selectedSignature = document.querySelector(`.${state.select}`);
+
+    if (state.select === 'pridex') {
+      selectedSignature.querySelector('#name').textContent = state.name;
+      selectedSignature.querySelector('#post').textContent = state.post;
+      const phoneElement = selectedSignature.querySelector('#phone');
+      if (state.phone.startsWith('7')) {
+        phoneElement.textContent = `${phoneMaskRu(state.phone)}`;
+      } else if (state.phone.startsWith('3')) {
+        phoneElement.textContent = `${phoneMaskCy(state.phone)}`;
+      } else {
+        phoneElement.textContent = state.phone;
+      }
     } else {
-      selectedSignature.querySelector('#email').textContent = this.state.email;
-      selectedSignature.querySelector('#name').textContent = this.state.name;
-      selectedSignature.querySelector('#post').textContent = this.state.post;
-      selectedSignature.querySelector('#phone').textContent = ` +${this.state.phone}`;
+      selectedSignature.querySelector('#email').textContent = state.email;
+      selectedSignature.querySelector('#name').textContent = state.name;
+      selectedSignature.querySelector('#post').textContent = state.post;
+      const phoneElement = selectedSignature.querySelector('#phone');
+      if (state.phone.startsWith('7')) {
+        phoneElement.textContent = `${phoneMaskRu(state.phone)}`;
+      } else if (state.phone.startsWith('3')) {
+        phoneElement.textContent = `${phoneMaskCy(state.phone)}`;
+      } else {
+        phoneElement.textContent = state.phone;
+      }
     }
+
     let blob = new Blob([selectedSignature.innerHTML], { type: 'text/html' });
-    FileSaver.saveAs(blob, `${this.state.select}`);
-
+    FileSaver.saveAs(blob, `${state.select}`);
     console.log(selectedSignature);
-  }
+  };
 
-  render() {
-    return (
-      <>
-        <form className='form' onSubmit={this.handleSubmit} onChange={this.handleChange}>
-          <Select className='select' id="signature" />
-          <Input id="name" placeholder="Имя Фамилия" />
-          <Input id="post" placeholder="Должность" />
-          <Input id="email" placeholder="E-mail" />
-          <Input id="phone" placeholder="Телефон (Без +)" />
-          <button type='submit' className='button' onClick={this.createSignatureElement}>Скачать</button>
-        </form>
-        <p className='quote'>При возникновении ошибок, пишите на почту:</p>
-        <p className='quote'>dmitriy.glebov@inex-digital.com</p>
+  return (
+    <>
+      <LanguageContext value={language} className="languagecontext">
+        <header className='header'><a href='https://inex-group.com/' target='blank'><img className='logo' src='https://static.tildacdn.com/tild3934-3537-4430-a662-613435666462/Group_15.svg' /></a></header>
+        <main className='form-block'>
+          <div className='.language-switch'>
+            <button className={language === 'en' ? 'language active' : 'language'} onClick={() => setLanguage('en')}>En</button>
+            <button className={language === 'ru' ? 'language active' : 'language'} onClick={() => setLanguage('ru')}>Ru</button>
+          </div>
+          <form className='form' onSubmit={handleSubmit}>
+            <Select className='select' id="select" onChange={handleChange} />
+            <Input id="name" placeholder={translations[language].namePh} onChange={handleChange} />
+            <Input id="post" placeholder={translations[language].postPh} onChange={handleChange} />
+            <Input id="email" type='email' placeholder={translations[language].emailPh} onChange={handleChange} />
+            <Input id="phone" type='tel' placeholder={translations[language].phonePh} onChange={handleChange} maxl={11} />
+            <button type='submit' className='button'>{translations[language].button}</button>
+          </form>
+          <p className='quote'>{translations[language].quote}</p>
+          <a className='quote' href='mailto:dmitriy.glebov@inex-digital.com'>dmitriy.glebov@inex-digital.com</a>
+        </main>
         <div className='multispace' style={{ display: 'none' }}>{multispace}</div>
-        <div className='pridex' style={{ display: 'none' }}>{pridex}</div>
         <div className='inexgroup' style={{ display: 'none' }}>{inexgroup}</div>
-      </>
-    );
-  }
+      </LanguageContext>
+
+    </>
+  );
 }
 
 export default App;
-

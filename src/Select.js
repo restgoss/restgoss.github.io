@@ -1,6 +1,6 @@
 import React from 'react';
 import './Select.css';
-const settings = ['inexgroup', 'pridex', 'multispace'];
+const settings = ['inexgroup','multispace'];
 
 class Select extends React.Component {
     constructor(props) {
@@ -18,7 +18,7 @@ class Select extends React.Component {
         const optionElements = this.returnOptionTags();
         return (
             <>
-            <select id="select">
+            <select id="select" onChange={this.props.onChange}>
                 {optionElements}
             </select>
             </>

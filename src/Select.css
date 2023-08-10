@@ -1,11 +1,25 @@
 select {
     background-color: #fff;
-    border: 1px solid #6495ed;
-    border-radius: 15px;
-    height: 30px;
+    border: 1px solid #2e333a;
+    height: 50px;
     margin: 15px 0 35px;
     text-align: center;
     text-transform: uppercase;
-    width: 355px;
+    width: 100%;
     font-family: inherit;
+    font-size: 14px;
 }
+
+select:focus {
+    outline: none;
+}
+
+
+@media screen and (max-width: 768px) {
+    select {
+        width: 90%;
+        font-size: 12px;
+        height: 40px;
+        margin-bottom: 25px;
+    }
+  }
