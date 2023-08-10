@@ -48,11 +48,11 @@ function App() {
       selectedSignature.querySelector('#post').textContent = state.post;
       const phoneElement = selectedSignature.querySelector('#phone');
       if (state.phone.startsWith('7')) {
-        phoneElement.textContent = `${phoneMaskRu(state.phone)}`;
+        phoneElement.textContent = `${translations[language].mob}${phoneMaskRu(state.phone)}`;
       } else if (state.phone.startsWith('3')) {
-        phoneElement.textContent = `${phoneMaskCy(state.phone)}`;
+        phoneElement.textContent = `${translations[language].mob}${phoneMaskCy(state.phone)}`;
       } else {
-        phoneElement.textContent = state.phone;
+        phoneElement.textContent = `${translations[language].mob}${state.phone}`;
       }
     } else {
       selectedSignature.querySelector('#email').textContent = state.email;
@@ -60,11 +60,11 @@ function App() {
       selectedSignature.querySelector('#post').textContent = state.post;
       const phoneElement = selectedSignature.querySelector('#phone');
       if (state.phone.startsWith('7')) {
-        phoneElement.textContent = `${phoneMaskRu(state.phone)}`;
+        phoneElement.textContent = `${translations[language].mob}${phoneMaskRu(state.phone)}`;
       } else if (state.phone.startsWith('3')) {
-        phoneElement.textContent = `${phoneMaskCy(state.phone)}`;
+        phoneElement.textContent = `${translations[language].mob}${phoneMaskCy(state.phone)}`;
       } else {
-        phoneElement.textContent = state.phone;
+        phoneElement.textContent = `${translations[language].mob}${state.phone}`;
       }
     }
 
@@ -78,7 +78,7 @@ function App() {
       <LanguageContext value={language} className="languagecontext">
         <header className='header'><a href='https://inex-group.com/' target='blank'><img className='logo' src='https://static.tildacdn.com/tild3934-3537-4430-a662-613435666462/Group_15.svg' /></a></header>
         <main className='form-block'>
-          <div className='.language-switch'>
+          <div className='language-switch'>
             <button className={language === 'en' ? 'language active' : 'language'} onClick={() => setLanguage('en')}>En</button>
             <button className={language === 'ru' ? 'language active' : 'language'} onClick={() => setLanguage('ru')}>Ru</button>
           </div>
