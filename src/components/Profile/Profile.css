@@ -1,0 +1,120 @@
+.profile__block {
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 80px);
+    background-color: #000;
+    align-items: center;
+    padding: 40px;
+    padding-top: 190px;
+    gap: 25px;
+    background-image: url('../../utils/background-pattern.png');
+}
+
+.profile__tribe-block {
+    display: flex;
+    flex-direction: row;
+    padding: 15px 25px;
+    gap: 15px;
+    background-color: #1c1c1e;
+    border-radius: 25px;
+    max-width: 500px;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile__tribe-block__text-block {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 5px;
+}
+
+.profile__tribe-block__text-block h2 {
+    color: #fff;
+}
+
+.profile__tribe-block__text-block p {
+    color: #A6A6A6;
+}
+
+.profile__tribe-block__button {
+    width: 125px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background-color: #282828;
+    color: #fff;
+    font-size: 24px;
+    border-radius: 36px;
+}
+
+.profile__tribe-block__button:hover {
+    border: 2px solid #fff;
+}
+
+.vlodmer__image {
+    border-radius: 50%;
+}
+
+.profile__smerks {
+    font-size: 54px;
+    color: #fff;
+}
+
+.profile__ca-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 5px;
+}
+
+.profile__ca-row p {
+    color: #fff;
+    font-size: 24px;
+}
+
+.profile__logos-block {
+    display: flex;
+    flex-direction: row;
+    gap: 45px;
+    justify-content: center;
+    padding-top: 30px;
+    flex-wrap: wrap;
+}
+
+.profile__logos-block img {
+    transition: .3s ease-in-out;
+}
+
+.profile__logos-block img:hover {
+    opacity: .7;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1024px) {
+
+}
+
+@media screen and (max-width: 920px) {
+
+}
+
+@media screen and (max-width: 768px) {
+    .profile__block {
+        padding-top: 100px;
+    }
+
+    .profile__smerks {
+        font-size: 36px;
+    }
+
+    .profile__ca-row p,span {
+        font-size: 16px;
+    }
+
+    .profile__ca-row img {
+        width: 20px;
+    }
+}

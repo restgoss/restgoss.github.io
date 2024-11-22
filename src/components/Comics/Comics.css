@@ -1,0 +1,10 @@
+.comics__block {
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 80px);
+    background-color: #000;
+    padding: 100px 40px;
+    align-items: center;
+    height: 750px;
+    justify-content: center;
+}

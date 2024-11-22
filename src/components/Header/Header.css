@@ -1,0 +1,134 @@
+.header__layout {
+    width: calc(100% - 160px);
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 80px;
+    position: fixed;
+    transition: .3s ease-in-out;
+    z-index: 99999;
+}
+
+.header__logo-block {
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+    color: #fff;
+    align-items: center;
+}
+
+.header__logo-block img {
+    width: 55px;
+    height: 55px;
+}
+
+.header__logo-block p {
+    font-family: 'Chewy';
+    font-size: 24px;
+}
+
+.header__buttons-block {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    align-items: center;
+}
+
+.header__default-button {
+    width: 125px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 36px;
+    background-color: #282828;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+}
+
+.header__default-button:hover {
+    border: 2px solid #fff;
+}
+
+.header__buy-button {
+    width: 125px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 36px;
+    background-color: #BBEE53;
+    border: none;
+    color: #000;
+    font-size: 24px;
+}
+
+.header__buy-button:hover {
+    border: 2px solid #fff;
+}
+
+.header__scrolled {
+    transition: .3s ease-in-out;
+    background-color: rgba(187, 238, 83, .2);
+    backdrop-filter: blur(10px);
+}
+
+.header__menu-button {
+    display: none;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+}
+
+.header__menu {
+    position: absolute;
+    width: 100%;
+    top: 100px;
+    left: 0px;
+    z-index: 9999;
+    color: #fff;
+
+    border-radius: 0px 0px 10px 10px;
+}
+
+.header__menu-item {
+    padding: 10px 0px;
+    font-size: 24px;
+    z-index: 9999;
+    background-color: rgba(0, 0, 0, .8);
+}
+
+@media screen and (max-width: 1024px) {
+    .header__layout {
+        padding: 0px 40px;
+        width: calc(100% - 80px);
+    }
+}
+
+@media screen and (max-width: 920px) {
+    .header__buttons-block {
+        display: none;
+    }
+
+    .header__menu-button {
+        display: block;
+    }
+
+
+    .header__layout {
+        background-color: rgba(187, 238, 83, .2);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .header__layout {
+        width: calc(100% - 40px);
+        padding: 0px 20px;
+        height: 60px;
+    }
+}
